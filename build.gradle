@@ -14,6 +14,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     compile 'com.opencsv:opencsv:5.4'
 
+    testCompile 'junit:junit:4.12'
+
+
 }
 
 test {
