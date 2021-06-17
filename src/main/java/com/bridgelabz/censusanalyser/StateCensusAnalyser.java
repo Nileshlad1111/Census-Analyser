@@ -13,12 +13,12 @@ import java.util.Iterator;
 public class StateCensusAnalyser {
 
 
-    public int getNumberOfRecords(String csvPath) throws CustomException {
+    public int getNumberOfRecords(String csvPath) throws CensusAnalyserException  {
         int counter = 0;
         int lastIndexOf = csvPath.lastIndexOf(".");
         String fileExtension = (lastIndexOf == -1) ? "" : csvPath.substring(lastIndexOf);
         if (!fileExtension.equals(".csv"))
-            throw new CustomException(CustomException.ExceptionType.INCORRECT_FILE_TYPE, "File Type Incorrect");
+            throw new CensusAnalyserException (CensusAnalyserException .ExceptionType.INCORRECT_FILE_TYPE, "File Type Incorrect");
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(csvPath));
         ) {
@@ -38,9 +38,9 @@ public class StateCensusAnalyser {
                 System.out.println("Density : " + csvUser.getDensityPerSqKm());
             }
         } catch (NoSuchFileException e) {
-            throw new CustomException(CustomException.ExceptionType.NO_SUCH_FILE, "No Such File Exists");
+            throw new CensusAnalyserException (CensusAnalyserException .ExceptionType.NO_SUCH_FILE, "No Such File Exists");
         } catch (RuntimeException e) {
-            throw new CustomException(CustomException.ExceptionType.DELIMITER_OR_HEADER_INCORRECT, "Delimiter Or Header Incorrect");
+            throw new CensusAnalyserException (CensusAnalyserException .ExceptionType.DELIMITER_OR_HEADER_INCORRECT, "Delimiter Or Header Incorrect");
         } catch (IOException e) {
             e.printStackTrace();
         }
