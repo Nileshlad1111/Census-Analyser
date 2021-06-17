@@ -12,7 +12,6 @@ import java.util.Iterator;
 
 public class StateCensusAnalyser {
 
-
     public int getNumberOfRecords(String csvPath) throws CensusAnalyserException  {
         int counter = 0;
         int lastIndexOf = csvPath.lastIndexOf(".");
@@ -29,18 +28,20 @@ public class StateCensusAnalyser {
                     .build();
                 Iterator<CSVStateCensus> csvUserIterator = csvToBean.iterator();
 
-            while (csvUserIterator.hasNext()) {
-                counter++;
-                CSVStateCensus csvUser = csvUserIterator.next();
-                System.out.println("State : " + csvUser.getState());
-                System.out.println("Population : " + csvUser.getPopulation());
-                System.out.println("Area : " + csvUser.getAreaInSqKm());
-                System.out.println("Density : " + csvUser.getDensityPerSqKm());
+            if (csvUserIterator.hasNext()) {
+                do {
+                    counter++;
+                    CSVStateCensus csvUser = csvUserIterator.next();
+                    System.out.println("State : " + csvUser.getState());
+                    System.out.println("Population : " + csvUser.getPopulation());
+                    System.out.println("Area : " + csvUser.getAreaInSqKm());
+                    System.out.println("Density : " + csvUser.getDensityPerSqKm());
+                } while (csvUserIterator.hasNext());
             }
         } catch (NoSuchFileException e) {
             throw new CensusAnalyserException (CensusAnalyserException .ExceptionType.NO_SUCH_FILE, "No Such File Exists");
         } catch (RuntimeException e) {
-            throw new CensusAnalyserException (CensusAnalyserException .ExceptionType.DELIMITER_OR_HEADER_INCORRECT, "Delimiter Or Header Incorrect");
+            throw new CensusAnalyserException(CensusAnalyserException .ExceptionType.DELIMITER_OR_HEADER_INCORRECT, "Delimiter Or Header Incorrect");
         } catch (IOException e) {
             e.printStackTrace();
         }
