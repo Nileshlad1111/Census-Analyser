@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-17T08:38:56" hostname="LAPTOP-DILI6N8Q" time="0.187">
+<testsuite name="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-17T08:54:03" hostname="LAPTOP-DILI6N8Q" time="0.216">
   <properties/>
-  <testcase name="givenCSVFile_WhenFileCorrect_ThenReturnTrueData()" classname="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" time="0.187"/>
+  <testcase name="givenCSVFile_WhenFileNameIncorrect_ThenThrowException()" classname="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" time="0.026"/>
+  <testcase name="givenCSVFile_WhenFileCorrect_ThenReturnTrueData()" classname="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" time="0.186"/>
+  <testcase name="givenCSVFile_WhenFileTypeIncorrect_ThenThrowException()" classname="com.bridgelabz.censusanalyser.StateCensusAnalyserTestCases" time="0.001"/>
   <system-out><![CDATA[State : Uttar Pradesh
 Population : 199812341
 Area : 240928
