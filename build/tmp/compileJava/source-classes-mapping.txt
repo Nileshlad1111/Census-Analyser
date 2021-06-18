@@ -3,5 +3,7 @@ com/bridgelabz/censusanalyser/CensusAnalyserException.java
  com.bridgelabz.censusanalyser.CensusAnalyserException$ExceptionType
 com/bridgelabz/censusanalyser/CSVStateCensus.java
  com.bridgelabz.censusanalyser.CSVStateCensus
+com/bridgelabz/censusanalyser/CSVStates.java
+ com.bridgelabz.censusanalyser.CSVStates
 com/bridgelabz/censusanalyser/StateCensusAnalyser.java
  com.bridgelabz.censusanalyser.StateCensusAnalyser
